@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Persons Table - Simple Javascript Single Page Web App</title>
+</head>
+
+<body>
+
+  <div class="container body">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3>List of Persons</h3>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <table class="table table-striped table-dark table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+                <th scope="col">City</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <h3>Add/Update Person Form</h3>
+        <form class="bg-dark p-4">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Gender:</label>
+            <div class="col-sm-10">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary gender">
+                  <input type="radio" name="gender" id="male" value="Male"> Male
+                </label>
+                <label class="btn btn-secondary gender">
+                  <input type="radio" name="gender" id="female" value="Female"> Female
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Age:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="age">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">City:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="city" onchange="addField()">
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <small class="form-text text-danger formNotValid mb-2">
+            Please enter valid values in all fields
+          </small>
+          <div class="form-group row" id="newField">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-10">
+              <div class="icon-container">
+                <input type="text" class="form-control" placeholder="Your City's Name" id="newCity">
+                <small class="form-text text-danger cityNotValid">
+                  Please enter a valid city name
+                </small>
+                <img src="https://cdn1.iconfinder.com/data/icons/freeline/32/add_cross_new_plus_create-512.png" alt="" id="icon" onclick="addOption()">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-4">
+              <a href="#" class="btn btn-secondary px-5" id="reset">Reset</a>
+            </div>
+            <div class="col-md-4">
+              <a href="#" class="btn btn-secondary px-5" id="add">Add</a>
+            </div>
+            <div class="col-md-4">
+              <a href="#" class="btn btn-secondary px-5" id="update">Update</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
